@@ -1,4 +1,4 @@
-package com.codingTestBook.Solution;
+package com.codingTestBook.solution;
 
 import java.util.Arrays;
 
