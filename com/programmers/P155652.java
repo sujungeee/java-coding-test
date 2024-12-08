@@ -3,7 +3,7 @@ package com.programmers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class C155652 {
+public class P155652 {
     public static String solution155652(String s, String skip, int index){
         StringBuilder sb= new StringBuilder();
         List<Character> list= new ArrayList<>();

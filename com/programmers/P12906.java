@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class C12906 {
+public class P12906 {
 
     public static int[] solution12906(int[] arr){
         List<Integer> result= new ArrayList<>();
