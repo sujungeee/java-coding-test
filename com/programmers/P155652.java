@@ -11,7 +11,6 @@ public class P155652 {
             list.add((char)('a'+i));
         }
 
-        // skip은 제거
         for(Character item: skip.toCharArray()){
             list.remove(item);
         }
