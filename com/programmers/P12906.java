@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class P12906 {
-
     public static int[] solution12906(int[] arr){
         List<Integer> result= new ArrayList<>();
         result.add(arr[0]);
