@@ -22,7 +22,7 @@ public class B17204 {
 
         arrays= new int[N];
         visited= new boolean[N];
-        for(int i=0; i<N; i++){
+        for(int i=0; i<N; i++) {
             arrays[i]= Integer.parseInt(br.readLine());
         }
 
