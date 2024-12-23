@@ -37,7 +37,6 @@ public class B17297 {
                 System.out.println("Messi Messi Gimossi");
             } else {
                 System.out.println("Messi Gimossi".charAt(m-1));
-
             }
             return;
         }
