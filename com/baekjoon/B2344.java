@@ -29,56 +29,51 @@ public class B2344 {
 
         // 1. 가장자리에 숫자 채우기
         int seq= 1;
-        for(int i=1; i<N+1; i++) {
-            boxes[i][0]= seq;
-            seq++;
-        }
+        for(int i=1; i<N+1; i++) { boxes[i][0]= seq++; }
 
-        for(int i=1; i<M+1; i++){
-            boxes[N+1][i]= seq;
-            seq++;
-        }
+        for(int i=1; i<M+1; i++){ boxes[N+1][i]= seq++; }
 
-        for(int i=N; i>=1; i--) {
-            boxes[i][M+1]= seq;
-            seq++;
-        }
+        for(int i=N; i>=1; i--) { boxes[i][M+1]= seq++; }
 
-        for(int i=M; i>=1; i--) {
-            boxes[0][i]= seq;
-            seq++;
-        }
+        for(int i=M; i>=1; i--) { boxes[0][i]= seq++; }
 
         // 2. 1번부터 시작
-        int[][] dirs = {
-                {1, N, 1, 0},
-                {1, M+1, 1, 1},
-                {N, 1, -1, 2},
-                {M, 1, -1, 3}
-        };
-
         StringBuilder sb= new StringBuilder();
-        for (int idx=0; idx<4; idx++) {
-            int start = dirs[idx][0]; // 시작점
-            int end = dirs[idx][1]; // 끝점
-            int d = dirs[idx][2]; // 증가값 또는 감소값
-            int dir = dirs[idx][3]; // 방향 (0: 오른쪽, 1: 위, 2: 왼쪽, 3: 아래)
 
-            for (int j = start; j == end; j += d) {
-                int x = j + dx[dir]; // 이동 방향에 따라 x 좌표 계산
-                int y = j + dy[dir]; // 이동 방향에 따라 y 좌표 계산
-                while (!is_edge(x, y)) { // 가장자리에 도달할 때까지 이동
-                    x += dx[dir];
-                    y += dy[dir];
-                    if (boxes[x][y] == 1) { // 거울이 있으면 방향 전환
-                        dir = change_dir(dir);
-                    }
+        for (int i = 1; i < seq; i++) {
+            int[] start = findStart(i);
+            int x = start[0], y = start[1], dir = start[2];
+            x+= dx[dir];
+            y+= dy[dir];
+
+            while (!is_edge(x, y)) {
+                if (boxes[x][y] == 1) {
+                    dir = change_dir(dir);
                 }
-                sb.append(boxes[x][y]).append(" ");
+                x += dx[dir];
+                y += dy[dir];
             }
+            sb.append(boxes[x][y]).append(" ");
         }
 
         System.out.println(sb.toString().trim());
+    }
+
+    // 가장자리 번호의 시작 좌표와 방향 반환
+    public static int[] findStart(int num) {
+        for (int i = 1; i <= N; i++) {
+            if (boxes[i][0] == num) return new int[]{i, 0, 0};
+        }
+        for (int i = 1; i <= M; i++) {
+            if (boxes[N + 1][i] == num) return new int[]{N + 1, i, 1};
+        }
+        for (int i = N; i >= 1; i--) {
+            if (boxes[i][M + 1] == num) return new int[]{i, M + 1, 2};
+        }
+        for (int i = M; i >= 1; i--) {
+            if (boxes[0][i] == num) return new int[]{0, i, 3};
+        }
+        return null;
     }
 
     // 현재 위치가 가장자리인지 확인하는 함수
