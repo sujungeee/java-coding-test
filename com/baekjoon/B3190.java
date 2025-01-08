@@ -10,7 +10,16 @@ import java.util.StringTokenizer;
 public class B3190 {
     public static int N, K, L;
     public static int[][] apples;
-    public static int[][] diffs;
+    public static class diff {
+        int seconds;
+        char dir;
+
+        diff(int seconds, char dir) {
+            this.seconds= seconds;
+            this.dir= dir;
+        }
+    }
+    public static diff[] infos;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
@@ -25,11 +34,12 @@ public class B3190 {
         }
 
         L= Integer.parseInt(br.readLine());
-        diffs= new int[L][2];
+        infos= new diff[L];
         for(int i=0; i<L; i++) {
             StringTokenizer st= new StringTokenizer(br.readLine());
-            diffs[i][0]= Integer.parseInt(st.nextToken());
-            diffs[i][1]= Integer.parseInt(st.nextToken());
+            int seconds= Integer.parseInt(st.nextToken());
+            char dir= st.nextToken().charAt(0);
+            infos[i]= new diff(seconds, dir);
         }
     }
 }
