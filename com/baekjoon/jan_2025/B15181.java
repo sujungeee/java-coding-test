@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/15681
 // 15681: 트리와 쿼리
-package com.baekjoon;
+package com.baekjoon.jan_2025;
 
 import java.io.IOException;
 import java.io.BufferedReader;
