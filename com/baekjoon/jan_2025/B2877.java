@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/2877
+// 2877: 4와 7
 package com.baekjoon.jan_2025;
 
 import java.io.IOException;
