@@ -25,6 +25,7 @@ public class B1148 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         // 단어마다 문자:빈도수 저장
+        // freqList: [{A=1, P=2, L=1, E=1}, {B=1, A=3, N=2}, ...]
         while (true) {
             String tmp = br.readLine();
             if (tmp.equals("-")) break;
@@ -43,15 +44,17 @@ public class B1148 {
     }
 
     public static void solution(String input) {
-        Info minInfo = new Info(200_000, new ArrayList<>());
-        Info maxInfo = new Info(0, new ArrayList<>());
+        Info minInfo = new Info(200_000, new ArrayList<>()); // 가장 적은 단어 정보
+        Info maxInfo = new Info(0, new ArrayList<>()); // 가장 많은 단어 정보
 
+        // freq:{L=2, A=1, R=1, B=1, I=2, T=1, N=1}
         HashMap<Character, Integer> freq = new HashMap<>();
         for (char c : input.toCharArray()) {
             freq.put(c, freq.getOrDefault(c, 0) + 1);
         }
 
         for (Character centerChar: freq.keySet()) { // centerChar: 정중앙에 있는 char
+            // count: centerChar를 정중앙에 놓았을 때, 만들 수 있는 단어 개수
             int count = 0;
 
             for (HashMap<Character, Integer> compFreq : freqList) {
