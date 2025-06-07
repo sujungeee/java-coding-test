@@ -2,7 +2,7 @@
 package com.programmers.jun_2025;
 
 /**
- * 340213: 동영상 재생기
+ * 340213: [PCCP 기출문제] 1번 / 동영상 재생기
  * # summary
  * : commands로 영상이 끝나는 시간을 return
  * # logic
