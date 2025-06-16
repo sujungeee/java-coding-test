@@ -8,7 +8,7 @@ import java.util.List;
  * 388353: 지게차와 크레인
  * # summary
  * : 지게차 or 크레인으로 컨테이너를 모두 뽑고, 남은 컨테이너 개수 return
- * 
+ *
  * # access
  * 1. just 구현 문제
  *  1-1. 전체 배열에서 지게차나 크레인으로 인해 삭제되는 컨테이너의 좌표(외부로 접근이 가능한 좌표)는 .로 표시
@@ -43,9 +43,7 @@ class Solution388353 {
         // 1
         containers = new char[n][m];
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                containers[i][j] = storage[i].charAt(j);
-            }
+            containers[i] = storage[i].toCharArray();
         }
 
         for (String request: requests) {
