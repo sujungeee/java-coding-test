@@ -1,4 +1,4 @@
-package com.swea.course;
+package com.swea.course.jun_2025;
 
 import java.io.BufferedReader;
 import java.io.IOException;
