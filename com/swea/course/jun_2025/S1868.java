@@ -1,3 +1,4 @@
+// https://swexpertacademy.com/main/code/problem/problemDetail.do
 package com.swea.course.jun_2025;
 
 import java.io.BufferedReader;
