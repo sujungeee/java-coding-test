@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 class Solution250121_1 {
-    Map<String, Integer> columns = Map.of("code", 0, "date", 1, "maximum", 2, "remain", 3)
+    Map<String, Integer> columns = Map.of("code", 0, "date", 1, "maximum", 2, "remain", 3);
     List<int[]> answer;
 
     public int[][] solution(int[][] data, String ext, int val_ext, String sort_by) {
