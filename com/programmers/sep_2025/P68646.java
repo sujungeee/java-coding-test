@@ -44,6 +44,7 @@ class Solution68646 {
         for (int i = 1; i < a.length - 1; i++) {
             if (!(leftMins[i - 1] < a[i] && rightMins[i + 1] < a[i])) answer++;
         }
+
         return answer;
     }
 }
